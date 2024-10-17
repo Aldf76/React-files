@@ -1,0 +1,107 @@
+Desafio 2 : Lista de Tarefas com Sincronização
+
+- Implemente um sistema onde o componente pai gerencia uma lista de tarefas,
+ e o componente filho permite a adição de novas tarefas. Quando uma nova tarefa 
+ é adicionada, o componente pai deve exibir a lista atualizada.
+
+Requisitos:
+
+- O useState no componente pai armazena a lista de tarefas.
+useEffect no componente pai para exibir um log no console sempre que a lista de tarefas 
+for atualizada.
+
+- O filho deve ter um campo de input e um botão para permitir 
+ao usuário adicionar uma nova tarefa.
+
+-As tarefas devem ser passadas como props do pai para o
+ filho e validadas usando PropTypes.
+
+Objetivos:
+
+- O pai controla a lista de tarefas e passa a função de adicionar
+ tarefa para o filho como uma prop.
+
+- O filho usa PropTypes para validar as props recebidas e 
+adiciona novas tarefas, que são refletidas no pai.
+
+===================================================================================================================
+Vou tentar por em prática meus conhecimentos adquiridos na faculdade sobre pensamento computacional elógica de algoritmos.
+===========================================================================================
+
+*1.Decomposição do problema.*
+
+- Pai: Vai ser responsável por manusear o estado de contagem das tarefas e exibir uma lista atualizada.
+
+- Filho: Será responsável por vai incrementar novas tarefas 
+
+*2. Reconhecimento de padrões
+
+-  Interação entre pai e filho através de props e manipulando o estado com useState
+-  Uso de proptypes para validar as propriedas do componente filho
+-  useEffect para realizar um contagem no log ( efeito colateral )
+
+*3. Abstração* 
+
+- Pai: O pai vai manusear o estado da aplicação. A lista de tarefas
+
+- Filho: O filho coleta a nova tarefa e trabalha com a função ed incrementar que o pai vai passar.
+Auxiliando e ativando com um botão.
+
+*4. Criando o algoritmo.*
+
+
+Componente Pai:
+
+1 - Criar o estado para armazaenar a lista de tarefas usando o useState
+
+2 - Desenvolver uma função que permite adicionar uma nova tarefa à lista *contagem* que vai ser 
+iniciada em valor 0.
+
+3 - Usar useEffect para exibir um log no console atualizado.
+4 - Usar o props para transmitir a lista de tarefas para o componente Filho...
+
+
+Componente Filho:
+
+- Imaginei esse desafio com nome para a nova tarefa... não apenas contabilizar... Posso estar errado
+
+1 - Campo input para o usuário inserir o texto da nova tarefa.
+
+2 - Criar o butão que vai acionar a adição da terafa (acionar a função do componente pai)
+
+3 - Validar as props usando Proptypes, para garantir que não aja erros na transmissão de tarefas
+
+
+*5. Fluxo de execução *
+
+1 - usuário vai digitar onome da tarefa no imput feito no filho 
+2 - clicará no botão e acionará a função de adição desenvolvida no Pai.
+3 - O componente pai vai atualizar a lista de tarefas ( o estado ) e a nova lista vai ser passada
+para o filho..
+4  - o useEffect no pai detecta a mudança e exibe o log da lista
+
+
+
+
+
+=========================================================
+APRENDIZADOS 
+
+1 {
+    
+- spread operator, uma funcionalidade do JavaScript que permite expandir elementos de um array, objeto ou outro tipo iterável em outro array ou estrutura.
+
+- setTarefas([...tarefas, novaTarefa]) está criando uma nova cópia do array tarefas e adicionando a novaTarefa ao final dele.
+- O spread operator (...tarefas) "espalha" os elementos existentes do array tarefas dentro de um novo array.
+- Depois, a nova tarefa (novaTarefa) é adicionada ao final do array.
+
+Por que não modificamos diretamente o array tarefas?
+Em React, não devemos modificar o estado diretamente. 
+Ao invés disso, sempre criamos uma nova versão do estado para
+garantir que o React reconheça que o estado mudou e,
+ consequentemente, re-renderize o componente corretamente.
+ Modificar o estado diretamente pode levar 
+a comportamentos imprevisíveis e erros de renderização.
+
+}
+

@@ -1,3 +1,5 @@
+import React, {useState}  from "react";
+
 const TrocaTexto = () => {
     const [nome, setNome] = useState("");
     const trocar = () => {
@@ -11,3 +13,5 @@ const TrocaTexto = () => {
         </div>
     );
 };
+
+export default TrocaTexto;
