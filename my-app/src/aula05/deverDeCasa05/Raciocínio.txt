@@ -1,0 +1,22 @@
+Problema:
+Criar um componente Grid que vai conter vários componentes Personagem. 
+O componente Personagem fará uma requisição via fetch para a API do Star Wars e exibirá as 
+propriedades name, height, mass, hair_color, e skin_color dos personagens.
+
+=== Análise das partes ===
+1 - Componente Grid
+-  Responsabilidade: O componente Grid terá responsábilidade de renderizar o layout 
+da página e deve conter todas as informações do componente Personagem
+
+2 - Componente Personagem.
+- Responsabilidade: O componente Personagem terá que fazer a requsição à API
+swapi via fetch e capturar as propriedades de cada personagem, filtradas e organizadas:
+name, height, mass, hair_color, e skin_color
+
+3 - Uso de Hooks ( estados )
+- Responsabilidade: O uso de Hooks será restrito ao useState e useEffect.
+O useEffect será responsável por fazer a requisição fetch e o 
+useState será responsávelpor armazaenar os dados recebidos da API
+
+4 - Será necessário utilizar o CSSpara organizar a exibição dos personagens/
+

@@ -105,3 +105,10 @@ a comportamentos imprevisíveis e erros de renderização.
 
 }
 
+2 {
+    NO FILHO
+    useState(''): Define que o estado inicial é uma string vazia, porque o campo de input começa sem valor nenhum.
+    NO PAI
+    useState([]): Define que o estado inicial é uma array vazia. Isso faz sentido porque você está começando sem tarefas e vai adicionar novas tarefas ao longo do tempo.
+}
+

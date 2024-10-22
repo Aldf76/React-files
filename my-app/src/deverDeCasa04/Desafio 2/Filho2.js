@@ -6,8 +6,10 @@ function Filho2({tarefas, adicionarTarefa }) {
     const [novaTarefa, setNovaTarefa] = useState('');
 
     //função para lidar com a mudança no imput
-    const handleInputChange = (event) => {
-        setNovaTarefa(event.target.value);
+    const handleInputChange = (event) => { // event é um parâmetro. é um objeto de evento que o navegador gera automaticamente toda vez que um evento ocorre neste caso, a mudança no campo de input.
+
+        setNovaTarefa(event.target.value); /*event.target refere-se ao elemento HTML que disparou o evento
+         (neste caso, o campo de input). event.target.value acessa o valor atual do campo de input, ou seja, o texto que o usuário acabou de digita */
     };
 
     //Função para adicionar a nova tarefa ao ser clicado no botão
@@ -23,7 +25,8 @@ function Filho2({tarefas, adicionarTarefa }) {
             <input 
             type="text" 
             value={novaTarefa} 
-            onChange={handleInputChange} 
+            onChange={handleInputChange}  // Usando React, onChange é utilizado para capturar o valor
+            // que o usuário digita ou altera em um campo de input e, a partir disso, atualizar o estado do componente
             placeholder="Digite uma nova tarefa"/>
             <button onClick={handleAdicionarTarefa}>Adicionar nova tarefa</button>
         </div>
@@ -37,5 +40,29 @@ Filho2.propTypes = {
     adicionarTarefa: PropTypes.func.isRequired //
 }
 
+
+/*
+
+function App() {
+  return (
+  <div className='App'>
+    <header className="App-header">
+      <img src={logo} className="App-logo" alt='logo'/>
+
+      <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+
+      <h1>Lista de Tarefas com sincronização</h1>      
+      <Pai2/>
+    
+
+    </header>
+    
+  </div>
+  )
+}
+
+*/
 
 export default Filho2;
