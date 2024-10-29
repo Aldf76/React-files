@@ -15,6 +15,7 @@ import Personagem from "./Personagem";
 function Grid(){
 
 const  [id, setId] = useState(''); //estado do id, string vazia, pois vai ser preenchido num input
+const [buscar, setBuscar] = useState(false); //estado do buscar
 
 
 //vAI ATUALIZAR O ID COM BASE NO INPUT, MUDANDO O ESTADO
@@ -26,8 +27,11 @@ const handleInputChange = (event) => {
 const handleSubmit = () => {
 if (!id){
  alert("Por favor, insira um id válido")
- return; // return para evitar que o código continue .
-}
+ return; // return para evitar que o código continue.
+}else(
+  setBuscar(true)
+)
+
 };
 
     return(
@@ -42,7 +46,7 @@ if (!id){
              <button onClick={handleSubmit}>Buscar</button>
 
         <div className="grid-container">
-            {id && <Personagem key={id} id={id}/> }  {/* Aprendi que vai renderizar o compononente com o id */}
+            {buscar && <Personagem key={id} id={id}/> }  {/* Aprendi que vai renderizar o compononente com o id */}
         </div>
         </div>  
 

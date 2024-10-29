@@ -1,19 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
-import Grid from './aula05/deverDeCasa05/Grid';
-
+import Grid from './aula06/deverDeCasa06/Grid.js';
 function App() {
   return (
   <div className='App'>
     <header className="App-header">
       <img src={logo} className="App-logo" alt='logo'/>
 
-      <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-
-        <Grid/>
-    
+      <Grid/>   
 
     </header>
     

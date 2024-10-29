@@ -35,15 +35,23 @@ const [personagem, setPersonagem] = useState({
 
    //aqui retornamos as informações que a api trouxe
 
+
+
    return (
     <div className='personagem-card'>
         <h2>{personagem.nome}</h2>
-        <p>Name {personagem.name}</p>
-        <p>Height {personagem.height}</p>
-        <p>Mass {personagem.mass}</p>
-        <p>Hair_color {personagem.hair_color}</p>
-        <p>Skin_color {personagem.skin_color}</p>
+        <p>Name : {personagem.name}</p>
+        <p>Height : {personagem.height}</p>
+        <p>Mass: {personagem.mass}</p>
+        <p>Hair_color : {personagem.hair_color}</p>
+        <p>Skin_color : {personagem.skin_color}</p>
+
+    <div className='personagem-list'>
+
     </div>
+    
+    </div>
+
    )
    
  }

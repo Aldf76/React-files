@@ -1,0 +1,17 @@
+Problema:
+CRIAR UMA APLICAÇÃO QUE EXIBA, UTILIZANDO A FUNÇÃO MAP, TODOS OS PERSONAGENS DE UMA API.
+
+=== Análise das partes ===
+1 - Componente Grid
+-  Responsabilidade: Manusear os estados e entrar em contato com a api. O trabalho está mais centralizado no grid desta vez
+
+2 - Componente Personagem.
+- Responsabilidade: Apenas receber o data e exibir. 
+
+3 - Uso de Hooks ( estados )
+- Responsabilidade: O uso de Hooks será restrito ao useState.
+- O hook useEffect não será utilizado pela falta de necessidade. Minha aplicação não necessita, necessariamente, de uma renderização automática
+
+
+4 - Será necessário utilizar o CSSpara organizar a exibição dos personagens/
+
