@@ -1,19 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
-import Grid from './aula06/deverDeCasa06/Grid.js';
-function App() {
+import React from "react";
+import StyledButton from "./aula09/StyledButton.js";
+import StyledCard from "./aula09/StyledCard.js";
+
+const App = () => {
   return (
-  <div className='App'>
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt='logo'/>
-
-      <Grid/>   
-
-    </header>
-    
-  </div>
-  )
-}
-
+    <>
+      <StyledButton />
+      <StyledCard />
+    </>
+  );
+};
 
 export default App;

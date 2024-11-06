@@ -1,0 +1,62 @@
+Explicação do Funcionamento da Aplicação:
+
+1. **Estrutura Geral**
+   - Esta aplicação consiste em três componentes principais: `App`, `Grid`, e `Counter`, juntamente com a configuração do Redux através de `store.js`.
+   - O objetivo da aplicação é buscar e exibir uma lista de personagens da API SWAPI (Star Wars API) e contar o número de vezes que o botão de visualização é clicado.
+   - O `Counter` exibe o total de visualizações de personagens, enquanto o `Grid` exibe as informações dos personagens.
+
+2. **Redux - Store e Counter**
+   - `store.js`: Arquivo onde o Redux é configurado, incluindo o estado inicial e o reducer.
+     - Estado inicial: `{ count: 0 }`.
+     - Reducer: `counterReducer` define as ações `INCREMENT` e `DECREMENT` para alterar o `count`.
+     - O Redux `store` é criado com `createStore(counterReducer)`, permitindo o gerenciamento global do estado do contador.
+   - `Counter`: Componente que exibe o contador de visualizações e dois botões para incrementar e decrementar o valor.
+     - Utiliza `useSelector` para acessar o `count` do estado global e `useDispatch` para alterar o valor.
+     - Ao clicar em "Incrementar", o valor do contador aumenta, enquanto o "Decrementar" diminui.
+
+3. **Grid (Busca de Personagens)**
+   - `Grid`: Componente responsável pela busca dos personagens da API e pela exibição da lista de personagens.
+     - `personagens`: estado local onde é armazenada a lista de personagens da API.
+     - `handleSubmit`: Função assíncrona que faz uma requisição para obter a lista de personagens.
+       - Após obter os dados da API, eles são armazenados em `personagens`, atualizando o estado do componente.
+     - `map`: Itera sobre cada personagem em `personagens`, renderizando o componente `Personagem` para exibir os detalhes de cada um.
+
+4. **Personagem (Exibição Individual)**
+   - `Personagem`: Componente que exibe as propriedades individuais de cada personagem (nome, altura, massa, etc).
+   - Este componente apenas recebe as informações de cada personagem como `props` e renderiza no formato desejado.
+
+5. **App.js**
+   - `App.js` é o ponto de entrada principal da aplicação.
+   - Envolve a aplicação com o `<Provider>` para que o estado Redux seja acessível em todos os componentes.
+   - Renderiza o `Counter` (contador de visualizações) e o `Grid` (lista de personagens).
+   - Assim, a aplicação permite:
+     - Buscar e exibir personagens de uma API externa.
+     - Incrementar ou decrementar a contagem de visualizações de personagens com o `Counter`.
+
+Resumo: Ao iniciar, o usuário vê a interface com o contador de visualizações e o botão de busca para listar personagens. Cada clique no botão incrementa o contador e exibe os personagens.
+"""
+
+
+import React from "react";
+import { Provider } from "react-redux"; // Provider para o Redux
+import Grid from "./aula07/deverDeCasa07/Grid";
+import Counter from "./aula07/deverDeCasa07/Counter";
+import store from "./aula07/deverDeCasa07/store"; // Importa a configuração da store Redux
+
+
+function App() {
+  return (
+    //  Provider para permitir o uso do Redux em toda a aplicação
+    <Provider store={store}>
+      <div style={{ textAlign: "center" }}>
+        <h1>Contador de Visualizações de Personagens</h1>
+        
+        {/*contagem de visualizações de personagens */}
+        <Counter />
+        
+        {/* Componente Grid para buscar e exibir personagens */}
+        <Grid />
+      </div>
+    </Provider>
+  );
+}
